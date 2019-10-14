@@ -8,7 +8,7 @@
   //this width is going to change dynamically if we resize
 </script>
 
-<style>
+<style lang="scss">
   .modal-bg {
     position: fixed;
     top: 0;
@@ -17,12 +17,11 @@
     bottom: 0;
     padding: 15px;
     background: rgba(0, 0, 0, 0.6);
-  }
-
-  .modal {
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
+    .modal {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+    }
   }
 </style>
 
