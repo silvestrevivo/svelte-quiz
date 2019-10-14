@@ -1,5 +1,11 @@
 <script>
   import { fade, blur, fly, slide, scale } from "svelte/transition";
+  import { createEventDispatcher } from "svelte";
+
+  const dispatch = createEventDispatcher();
+  let w;
+  $: console.log("width of modal", w);
+  //this width is going to change dynamically if we resize
 </script>
 
 <style>
@@ -20,8 +26,9 @@
   }
 </style>
 
-<div class="modal-bg " transition:fade>
+<div class="modal-bg " transition:fade bind:clientWidth={w}>
   <div class="modal" transition:fly={{ y: -100 }}>
+    <button on:click={() => dispatch('close')}>Close</button>
     <slot />
   </div>
 </div>
