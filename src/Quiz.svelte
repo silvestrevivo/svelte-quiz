@@ -20,12 +20,22 @@
 
   function resetQuiz() {
     score = 0;
+    activeQuestion = 0;
     quiz = getQuiz();
   }
 
   function addToScore() {
     score = score + 1;
   }
+
+  // Reactive Statement
+  $: if (score > 1) {
+    alert("You won");
+    resetQuiz();
+  }
+
+  // Reactive declaration
+  $: questionNumber = activeQuestion + 1;
 </script>
 
 <style>
@@ -38,7 +48,7 @@
   <button on:click={resetQuiz}>Start a new Quiz!</button>
 
   <h3>My Score: {score}</h3>
-  <h4>Question #{activeQuestion + 1}</h4>
+  <h4>Question #{questionNumber}</h4>
 
   {#await quiz}
     <p>Loading....</p>
