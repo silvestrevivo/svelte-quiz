@@ -2,4 +2,5 @@
   import Quiz from "./Quiz.svelte";
 </script>
 
-<Quiz quizName="Quiz App" />
+<h1>Level Up Music</h1>
+<Quiz />
