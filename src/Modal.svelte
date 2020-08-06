@@ -4,7 +4,7 @@
 
   const dispatch = createEventDispatcher();
   let w;
-  // $: console.log("width of modal", w);
+  $: console.log("width of modal", w);
   //this width is going to change dynamically if we resize
 </script>
 
